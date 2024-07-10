@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>Email Registration Form</title>
+    <style>
+        form {
+            width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="password"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: 48%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Email Registration Form</h1>
+    <form method="post" action="/cgi-bin/formmail">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" size="30" maxlength="50">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" size="30" maxlength="50">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" size="30">
+        </div>
+        <div>
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" cols="36">Enter your comments here...</textarea>
+        </div>
+        <div>
+            <label>Preferred Contact Method:</label>
+            <input type="checkbox" id="contact_email" name="contact_method" value="email">
+            <label for="contact_email" style="display: inline;">Email</label>
+            <input type="checkbox" id="contact_phone" name="contact_method" value="phone">
+            <label for="contact_phone" style="display: inline;">Phone</label>
+        </div>
+        <div>
+            <label>Gender:</label>
+            <input type="radio" id="gender_male" name="gender" value="male" checked="checked">
+            <label for="gender_male" style="display: inline;">Male</label>
+            <input type="radio" id="gender_female" name="gender" value="female">
+            <label for="gender_female" style="display: inline;">Female</label>
+        </div>
+        <div>
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="usa" selected="selected">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+                <option value="australia">Australia</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Submit Your Entries">
+            <input type="reset" value="Clear Your Entries">
+        </div>
+    </form>
+</body>
+</html>
